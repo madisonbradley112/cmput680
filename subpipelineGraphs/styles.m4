@@ -17,13 +17,13 @@ subgraph cluster_1 {
 define(`SHAPES_LEGEND', `
 subgraph cluster_2 {
     edge [style=invis];
-    standalone_pass [shape=box];
-    sub_pipeline [shape=oval];
+    pass [shape=box];
+    subpipeline [shape=oval];
     callback [shape=parallelogram];
     helper_function [shape=hexagon]
-    standalone_pass -> sub_pipeline -> helper_function -> callback;
+    pass -> subpipeline -> helper_function -> callback;
     label = "Legend: Pass Type"
-    legend_spacer_1 -> standalone_pass
+    legend_spacer_1 -> pass
     callback -> legend_spacer_2
     legend_spacer_2 [label="", width=2.5, height=0, shape=box, style=invis];
  }
