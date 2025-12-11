@@ -1,0 +1,225 @@
+Coroutines/CoroFrame.cpp:  FieldIDType getLayoutFieldIndex(FieldIDType Id) const {
+Coroutines/CoroFrame.cpp:  Field getLayoutField(FieldIDType Id) const {
+Coroutines/CoroFrame.cpp:    auto Field = B.getLayoutField(getFieldIndex(I));
+Coroutines/CoroFrame.cpp:    auto IndexField = B.getLayoutField(*SwitchIndexFieldId);
+Coroutines/CoroFrame.cpp:      DVI.moveBefore(*(*InsertPt)->getParent(), *InsertPt);
+Coroutines/CoroSplit.cpp:  CoroEndBlock->splice(End->getIterator(), MustTailCallFuncBlock,
+Coroutines/CoroSplit.cpp:  Entry->moveBefore(OldEntry);
+Coroutines/CoroSplit.cpp:    I.moveBefore(*Entry, Entry->getFirstInsertionPt());
+Coroutines/SpillUtils.cpp:    Inst->moveBefore(InsertPt->getIterator());
+IPO/ArgumentPromotion.cpp:  // Since we have now created the new function, splice the body of the old
+IPO/ArgumentPromotion.cpp:  NF->splice(NF->begin(), F);
+IPO/Attributor.cpp:    // Since we have now created the new function, splice the body of the old
+IPO/Attributor.cpp:    NewFn->splice(NewFn->begin(), OldFn);
+IPO/CMakeLists.txt:  HotColdSplitting.cpp
+IPO/DeadArgumentElimination.cpp:  // Since we have now created the new function, splice the body of the old
+IPO/DeadArgumentElimination.cpp:  NF->splice(NF->begin(), &F);
+IPO/DeadArgumentElimination.cpp:  // Since we have now created the new function, splice the body of the old
+IPO/DeadArgumentElimination.cpp:  NF->splice(NF->begin(), F);
+IPO/ExpandVariadics.cpp:    NF->splice(NF->begin(), &F);
+IPO/GlobalOpt.cpp:  NV->setSection("llvm.metadata");
+IPO/HotColdSplitting.cpp://===- HotColdSplitting.cpp -- Outline Cold Regions -------------*- C++ -*-===//
+IPO/HotColdSplitting.cpp:#include "llvm/Transforms/IPO/HotColdSplitting.h"
+IPO/HotColdSplitting.cpp:bool HotColdSplitting::isFunctionCold(const Function &F) const {
+IPO/HotColdSplitting.cpp:bool HotColdSplitting::isBasicBlockCold(
+IPO/HotColdSplitting.cpp:bool HotColdSplitting::shouldOutlineFrom(const Function &F) const {
+IPO/HotColdSplitting.cpp:bool HotColdSplitting::isSplittingBeneficial(CodeExtractor &CE,
+IPO/HotColdSplitting.cpp:Function *HotColdSplitting::extractColdRegion(
+IPO/HotColdSplitting.cpp:      OutF->setSection(ColdSectionName);
+IPO/HotColdSplitting.cpp:        OutF->setSection(OrigF->getSection());
+IPO/HotColdSplitting.cpp:      return OptimizationRemark(DEBUG_TYPE, "HotColdSplit",
+IPO/HotColdSplitting.cpp:bool HotColdSplitting::outlineColdRegions(Function &F, bool HasProfileSummary) {
+IPO/HotColdSplitting.cpp:bool HotColdSplitting::run(Module &M) {
+IPO/HotColdSplitting.cpp:HotColdSplittingPass::run(Module &M, ModuleAnalysisManager &AM) {
+IPO/HotColdSplitting.cpp:  if (HotColdSplitting(PSI, GBFI, GTTI, &GetORE, LookupAC).run(M))
+IPO/IROutliner.cpp:  TargetBB.splice(TargetBB.end(), &SourceBB);
+IPO/IROutliner.cpp:      Term->moveBefore(*ReturnBlock, ReturnBlock->end());
+IPO/IROutliner.cpp:      Term->moveBefore(*EndBB, EndBB->end());
+IPO/LowerTypeTests.cpp:    WeakInitializerFn->setSection(
+IPO/OpenMPOpt.cpp:      cast<Instruction>(ReplVal)->moveBefore(IP->getIterator());
+IPO/OpenMPOpt.cpp:        Reorder.first->moveBefore(Reorder.second->getIterator());
+IPO/WholeProgramDevirt.cpp:  NewGV->setSection(B.GV->getSection());
+InstCombine/InstCombineCalls.cpp:          Temp->moveBefore(II->getIterator());
+InstCombine/InstCombineLoadStoreAlloca.cpp:          AI.moveBefore(FirstInst);
+InstCombine/InstCombineShifts.cpp:      AndI->moveBefore(InnerShift->getIterator());
+InstCombine/InstCombineVectorOps.cpp:    // Test the shuffle mask to see if it splices the inserted scalar into the
+InstCombine/InstructionCombining.cpp:    Instr.moveBeforePreserving(TI->getIterator());
+InstCombine/InstructionCombining.cpp:    FI.moveBefore(*MoveBefore->getParent(), MoveBefore);
+InstCombine/InstructionCombining.cpp:  I->moveBefore(*DestBlock, InsertPos);
+Instrumentation/AddressSanitizer.cpp:  Metadata->setSection(getGlobalMetadataSection());
+Instrumentation/AddressSanitizer.cpp:    Liveness->setSection("__DATA,__asan_liveness,regular,live_support");
+Instrumentation/AddressSanitizer.cpp:        NewGlobal->setSection("__TEXT,__asan_cstring,regular");
+Instrumentation/AddressSanitizer.cpp:      AI->moveBefore(InsBefore->getIterator());
+Instrumentation/AddressSanitizer.cpp:    ArgInitInst->moveBefore(InsBefore->getIterator());
+Instrumentation/AddressSanitizer.cpp:    LocalEscapeCall->moveBefore(InsBefore->getIterator());
+Instrumentation/ControlHeightReduction.cpp:    I->moveBefore(HoistPoint->getIterator());
+Instrumentation/ControlHeightReduction.cpp:    F.splice(ExitBlock->getIterator(), &F, NewBlocks[0]->getIterator(),
+Instrumentation/GCOVProfiling.cpp:          Counters->setSection("__llvm_gcov_ctr_section");
+Instrumentation/GCOVProfiling.cpp:  CovInitGV->setSection(getInstrProfSectionName(
+Instrumentation/HWAddressSanitizer.cpp:  Note->setSection(".note.hwasan.globals");
+Instrumentation/HWAddressSanitizer.cpp:  Dummy->setSection("hwasan_globals");
+Instrumentation/HWAddressSanitizer.cpp:          I.moveBefore(F.getEntryBlock(), InsertPt);
+Instrumentation/HWAddressSanitizer.cpp:    Descriptor->setSection("hwasan_globals");
+Instrumentation/IndirectCallPromotion.cpp:  I->moveBefore(*DestBlock, InsertPos);
+Instrumentation/InstrOrderFile.cpp:    OrderFileBuffer->setSection(
+Instrumentation/InstrProfiling.cpp:    I->moveBefore(ThenTerm->getIterator());
+Instrumentation/InstrProfiling.cpp:    I->moveBefore(ThenTerm->getIterator());
+Instrumentation/InstrProfiling.cpp:  SamplingVarIncr->moveBefore(ElseTerm->getIterator());
+Instrumentation/InstrProfiling.cpp:  Data->setSection(getInstrProfSectionName(IPSK_vtab, TT.getObjectFormat()));
+Instrumentation/InstrProfiling.cpp:  Ptr->setSection(getInstrProfSectionName(IPSK, TT.getObjectFormat()));
+Instrumentation/InstrProfiling.cpp:    ValuesVar->setSection(
+Instrumentation/InstrProfiling.cpp:  Data->setSection(
+Instrumentation/InstrProfiling.cpp:  VNodesVar->setSection(
+Instrumentation/InstrProfiling.cpp:  NamesVar->setSection(
+Instrumentation/InstrProfiling.cpp:  VTableNamesVar->setSection(
+Instrumentation/SanitizerCoverage.cpp:    SanCovCallbackGate->setSection(
+Instrumentation/SanitizerCoverage.cpp:  Array->setSection(getSectionName(Section));
+Scalar/DFAJumpThreading.cpp:    NewBB->moveAfter(BB);
+Scalar/DivRemPairs.cpp:        DivInst->moveBefore(PredBB->getTerminator()->getIterator());
+Scalar/DivRemPairs.cpp:          RemInst->moveBefore(PredBB->getTerminator()->getIterator());
+Scalar/DivRemPairs.cpp:        RemInst->moveAfter(DivInst);
+Scalar/DivRemPairs.cpp:        DivInst->moveAfter(RemInst);
+Scalar/DivRemPairs.cpp:        DivInst->moveBefore(RemInst->getIterator());
+Scalar/GVNHoist.cpp:      Repl->moveBefore(Last->getIterator());
+Scalar/GVNSink.cpp:  I0->moveBefore(BBEnd->getFirstInsertionPt());
+Scalar/GuardWidening.cpp:  Inst->moveBefore(*Loc->getParent(), Loc);
+Scalar/IndVarSimplify.cpp:    ToMove->moveBefore(*ExitBlock, InsertPt);
+Scalar/JumpThreading.cpp:  NewBB->moveAfter(PredBB);
+Scalar/JumpThreading.cpp:  NewBB->moveAfter(PredBB);
+Scalar/LICM.cpp:      HoistCommonSucc->moveBefore(TargetSucc);
+Scalar/LICM.cpp:      HoistTrueDest->moveBefore(HoistCommonSucc);
+Scalar/LICM.cpp:      HoistFalseDest->moveBefore(HoistCommonSucc);
+Scalar/LICM.cpp:  I.moveBefore(*Dest->getParent(), Dest);
+Scalar/LoopFuse.cpp:      I->moveBefore(*FC0.Preheader,
+Scalar/LoopFuse.cpp:      I->moveBefore(*FC1.ExitBlock, FC1.ExitBlock->getFirstInsertionPt());
+Scalar/LoopFuse.cpp:        PHI->moveBefore(FC0.Header->getFirstInsertionPt());
+Scalar/LoopFuse.cpp:        PHI->moveBefore(FC0.Header->getFirstInsertionPt());
+Scalar/LoopInterchange.cpp:      I.moveBeforePreserving(OuterLoopHeader->getTerminator()->getIterator());
+Scalar/LoopInterchange.cpp:  ToBB->splice(InsertBefore->getIterator(), FromBB, FromBB->begin(),
+Scalar/LoopInterchange.cpp:    P->moveBefore(InnerLatch->getFirstNonPHIIt());
+Scalar/LoopInterchange.cpp:    P->moveBefore(InnerExit->getFirstNonPHIIt());
+Scalar/LoopInterchange.cpp:    PHI->moveBefore(InnerLoopHeader->getFirstNonPHIIt());
+Scalar/LoopInterchange.cpp:    PHI->moveBefore(OuterLoopHeader->getFirstNonPHIIt());
+Scalar/LoopSink.cpp:  I.moveBefore(MoveBB->getFirstInsertionPt());
+Scalar/LoopStrengthReduce.cpp:        Cond->moveBefore(TermBr->getIterator());
+Scalar/LoopStrengthReduce.cpp:              NewBB->moveBefore(PN->getParent());
+Scalar/LoopStrengthReduce.cpp:    BO->moveBefore(IVIncInsertPos->getIterator());
+Scalar/LowerMatrixIntrinsics.cpp:        I->moveBefore(MatMul->getIterator());
+Scalar/LowerMatrixIntrinsics.cpp:          End->moveAfter(Store);
+Scalar/MemCpyOptimizer.cpp:    I->moveBefore(P->getIterator());
+Scalar/MemCpyOptimizer.cpp:      MSSAU->moveAfter(MA, MemInsertPoint);
+Scalar/MemCpyOptimizer.cpp:    GEP->moveBefore(C->getIterator());
+Scalar/MemCpyOptimizer.cpp:    SkippedLifetimeStart->moveBefore(C->getIterator());
+Scalar/MemCpyOptimizer.cpp:    MSSAU->moveBefore(MSSA->getMemoryAccess(SkippedLifetimeStart),
+Scalar/MemCpyOptimizer.cpp:    SrcAlloca->moveBefore(*SrcAlloca->getParent(),
+Scalar/MergeICmps.cpp:    Inst->moveBeforePreserving(*NewParent, NewParent->begin());
+Scalar/Reassociate.cpp:      ExpressionChangedStart->moveBefore(I->getIterator());
+Scalar/Reassociate.cpp:    I->moveBefore(BI->getIterator());
+Scalar/Reassociate.cpp:    TheNeg->moveBefore(*InsertPt->getParent(), InsertPt);
+Scalar/RewriteStatepointsForGC.cpp:        Cond->moveBefore(TI->getIterator());
+Scalar/SROA.cpp:    NewAssign->moveBefore(DbgAssign->getIterator());
+Scalar/SROA.cpp:  // split, unsplit, and unsplittable splices based on the usage patterns.
+Scalar/SROA.cpp:    // splices.
+Scalar/SimpleLoopUnswitch.cpp:    BI.moveBefore(*OldPH, OldPH->end());
+Scalar/SimpleLoopUnswitch.cpp:    NewBB->moveBefore(LoopPH);
+Scalar/SimpleLoopUnswitch.cpp:    TI.moveBefore(*SplitBB, SplitBB->end());
+Scalar/SimpleLoopUnswitch.cpp:  GI->moveBefore(DeoptBlockTerm->getIterator());
+Scalar/Sink.cpp:  Inst->moveBefore(SuccToSinkTo->getFirstInsertionPt());
+Scalar/SpeculativeExecution.cpp:      Current->moveBefore(ToBlock.getTerminator()->getIterator());
+Scalar/TailRecursionElimination.cpp:        AI->moveBefore(NEBI);
+Utils/BasicBlockUtils.cpp:  PredBB->splice(PTI->getIterator(), BB, BB->begin(), STI->getIterator());
+Utils/BasicBlockUtils.cpp:    BB->back().moveBeforePreserving(*PredBB, PredBB->end());
+Utils/CallPromotionUtils.cpp:  OrigInst->moveBefore(ElseTerm->getIterator());
+Utils/CallPromotionUtils.cpp:  CSInstr->moveBefore(CB.getIterator());
+Utils/CloneFunction.cpp:    NewBB->moveBefore(NewFunc->end());
+Utils/CloneFunction.cpp:    // removed, so we just need to splice the blocks.
+Utils/CloneFunction.cpp:    I->splice(I->end(), Dest);
+Utils/CloneFunction.cpp:  F->splice(Before->getIterator(), F, NewPH->getIterator());
+Utils/CloneFunction.cpp:  F->splice(Before->getIterator(), F, NewLoop->getHeader()->getIterator(),
+Utils/CodeExtractor.cpp:      cast<Instruction>(II)->moveBefore(TI->getIterator());
+Utils/CodeExtractor.cpp:      cast<Instruction>(II)->moveBefore(*newFuncRoot,
+Utils/CodeExtractor.cpp:      AI->moveBefore(*newFuncRoot, newFuncRoot->getFirstInsertionPt());
+Utils/CodeMoverUtils.cpp:      I.moveBeforePreserving(MovePos);
+Utils/CodeMoverUtils.cpp:      I.moveBeforePreserving(MovePos->getIterator());
+Utils/FlattenCFG.cpp:    FirstCondBlock->splice(FirstCondBlock->end(), CB);
+Utils/FlattenCFG.cpp:  FirstEntryBlock->splice(FirstEntryBlock->end(), SecondEntryBlock);
+Utils/GuardUtils.cpp:    WCAnd->moveBefore(WidenableBR->getIterator());
+Utils/GuardUtils.cpp:    WCAnd->moveBefore(WidenableBR->getIterator());
+Utils/IRNormalizer.cpp:      Instruction->moveBefore(FirstNonPHIOrDbgOrAlloca);
+Utils/InlineFunction.cpp:      BBID->moveBefore(BB->getFirstInsertionPt());
+Utils/InlineFunction.cpp:      // Transfer all of the allocas over in a block.  Using splice means
+Utils/InlineFunction.cpp:      Caller->getEntryBlock().splice(InsertPoint, &*FirstNewBlock,
+Utils/InlineFunction.cpp:  // before we splice the inlined code into the CFG and lose track of which
+Utils/InlineFunction.cpp:  // return instruction, we splice the body of the inlined callee directƒggly into
+Utils/InlineFunction.cpp:    OrigBB->splice(CB.getIterator(), &*FirstNewBlock, FirstNewBlock->begin(),
+Utils/InlineFunction.cpp:  Caller->splice(AfterCallBB->getIterator(), Caller, FirstNewBlock,
+Utils/InlineFunction.cpp:    AfterCallBB->splice(AfterCallBB->begin(), ReturnBB);
+Utils/InlineFunction.cpp:  OrigBB->splice(Br->getIterator(), CalleeEntry);
+Utils/Instrumentation.cpp:static BasicBlock::iterator moveBeforeInsertPoint(BasicBlock::iterator I,
+Utils/Instrumentation.cpp:    I->moveBefore(IP);
+Utils/Instrumentation.cpp:      IP = moveBeforeInsertPoint(I, IP);
+Utils/Local.cpp:  DestBB->splice(DestBB->begin(), PredBB);
+Utils/Local.cpp:    DestBB->moveAfter(PredBB);
+Utils/Local.cpp:    Succ->splice(Succ->getFirstNonPHIIt(), BB);
+Utils/Local.cpp:        DII->moveAfter(&DomPoint);
+Utils/Local.cpp:  DomBlock->splice(InsertPt->getIterator(), BB, BB->begin(),
+Utils/LoopPeel.cpp:    F->splice(InsertTop->getIterator(), F, NewBlocks[0]->getIterator(),
+Utils/LoopRotationUtils.cpp:        Inst->moveBefore(LoopEntryBranch->getIterator());
+Utils/LoopRotationUtils.cpp:        ExitSplit->moveBefore(Exit);
+Utils/LoopSimplify.cpp:  NewBB->moveAfter(FoundBB);
+Utils/LoopSimplify.cpp:  F->splice(InsertPos, F, BEBlock->getIterator());
+Utils/LoopUnrollAndJam.cpp:                               I->moveBefore(InsertLoc);
+Utils/LoopUnrollAndJam.cpp:      Phi->moveBefore(*Dest, insertPoint);
+Utils/LoopUnrollRuntime.cpp:  F->splice(InsertBot->getIterator(), F, NewBlocks[0]->getIterator(), F->end());
+Utils/LoopUtils.cpp:      DVI->moveBefore(*ExitBlock, InsertDbgValueBefore);
+Utils/ModuleUtils.cpp:  GV->setSection("llvm.metadata");
+Utils/ModuleUtils.cpp:    NewGV->setSection(GV->getSection());
+Utils/ModuleUtils.cpp:  GV->setSection(SectionName);
+Utils/MoveAutoInit.cpp:    Job.first->moveBefore(*Job.second, Job.second->getFirstInsertionPt());
+Utils/ScalarEvolutionExpander.cpp:    I->moveBefore(InsertPos->getIterator());
+Utils/SimplifyCFG.cpp:        // and leave any that were not hoisted behind (by calling moveBefore
+Utils/SimplifyCFG.cpp:        // rather than moveBeforePreserving).
+Utils/SimplifyCFG.cpp:        I1->moveBefore(TI->getIterator());
+Utils/SimplifyCFG.cpp:          I2->moveBefore(TI->getIterator());
+Utils/SimplifyCFG.cpp:        // and leave any that were not hoisted behind (by calling moveBefore
+Utils/SimplifyCFG.cpp:        // rather than moveBeforePreserving).
+Utils/SimplifyCFG.cpp:        I1->moveBefore(TI->getIterator());
+Utils/SimplifyCFG.cpp:  I0->moveBefore(*BBEnd, BBEnd->getFirstInsertionPt());
+Utils/SimplifyCFG.cpp:  BB->splice(BI->getIterator(), ThenBB, ThenBB->begin(),
+Utils/SimplifyCFG.cpp:    EdgeBB->moveBefore(RealDest);
+Utils/SimplifyCFG.cpp:      PN.moveBefore(InsertPt);
+Vectorize/LoadStoreVectorizer.cpp:    IM->moveBefore(I->getIterator());
+Vectorize/LoopIdiomVectorize.cpp:  CmpBB->moveBefore(EndBB);
+Vectorize/LoopVectorize.cpp:    // FIXME: support fixed-order recurrences by fixing splice of non VFxUF
+Vectorize/LoopVectorize.cpp:      SCEVCheckBlock->getTerminator()->moveBefore(
+Vectorize/LoopVectorize.cpp:      MemCheckBlock->getTerminator()->moveBefore(
+Vectorize/LoopVectorize.cpp:    SCEVCheckBlock->moveBefore(LoopVectorPreHeader);
+Vectorize/LoopVectorize.cpp:    MemCheckBlock->moveBefore(LoopVectorPreHeader);
+Vectorize/LoopVectorize.cpp:    R.moveBefore(*IRVPBB, IRVPBB->end());
+Vectorize/LoopVectorize.cpp:      I->moveBefore(PredBB->getFirstInsertionPt());
+Vectorize/LoopVectorize.cpp:    Phi->moveBefore(LoopVectorPreHeader->getFirstNonPHIIt());
+Vectorize/LoopVectorize.cpp:    //     // Next, third phase will introduce v1' = splice(v1(3), v2(0, 1, 2))
+Vectorize/SLPVectorizer.cpp:      VecI->moveBeforePreserving(*Builder.GetInsertBlock(),
+Vectorize/SLPVectorizer.cpp:              I->moveBefore(*Builder.GetInsertPoint()->getParent(),
+Vectorize/SLPVectorizer.cpp:                CI->moveAfter(I);
+Vectorize/SLPVectorizer.cpp:          II->moveAfter(NewI);
+Vectorize/SLPVectorizer.cpp:    I->moveBefore(PreHeader->getTerminator()->getIterator());
+Vectorize/SLPVectorizer.cpp:          In.moveAfter(V);
+Vectorize/SLPVectorizer.cpp:        PickedInst->moveAfter(LastScheduledInst->getPrevNode());
+Vectorize/SandboxVectorizer/Scheduler.cpp:    I->moveBefore(*Where.getNodeParent(), Where);
+Vectorize/VPlan.cpp:    ToMove.moveBefore(*SplitBlock, SplitBlock->end());
+Vectorize/VPlan.cpp:      Inc->moveBefore(std::prev(VectorLatchBB->getTerminator()->getIterator()));
+Vectorize/VPlan.h:  void moveAfter(VPRecipeBase *MovePos);
+Vectorize/VPlan.h:  void moveBefore(VPBasicBlock &BB, iplist<VPRecipeBase>::iterator I);
+Vectorize/VPlanRecipes.cpp:void VPRecipeBase::moveAfter(VPRecipeBase *InsertPos) {
+Vectorize/VPlanRecipes.cpp:void VPRecipeBase::moveBefore(VPBasicBlock &BB,
+Vectorize/VPlanRecipes.cpp:    O << "first-order splice";
+Vectorize/VPlanTransforms.cpp:    SinkCandidate->moveBefore(*SinkTo, SinkTo->getFirstNonPhi());
+Vectorize/VPlanTransforms.cpp:      ToMove.moveBefore(*Then2, Then2->getFirstNonPhi());
+Vectorize/VPlanTransforms.cpp:      Phi1ToMove.moveBefore(*Merge2, Merge2->begin());
+Vectorize/VPlanTransforms.cpp:      R.moveBefore(*PredVPBB, PredVPBB->end());
+Vectorize/VPlanTransforms.cpp:    SinkCandidate->moveAfter(Previous);
+Vectorize/VPlanTransforms.cpp:    HoistCandidate->moveBefore(*HoistPoint->getParent(),
+Vectorize/VPlanTransforms.cpp:      R.moveBefore(*Preheader, Preheader->end());
+Vectorize/VPlanUnroll.cpp:    // The second operand of Fixed Order Recurrence phi's, feeding the spliced
+Vectorize/VPlanUnroll.cpp:    // value across the backedge, needs to remap to the last part of the spliced

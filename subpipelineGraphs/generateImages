@@ -1,0 +1,19 @@
+#!/bin/bash
+
+for file in ./MachinePasses/*.dot.m4
+do 
+    filename=$(basename -- "$file")
+    filename="${filename%.*.*}"
+    echo "$filename"
+
+    m4 "$file" | dot -Tpng -o "./MachinePassImages/$filename.png"
+done
+
+for file in ./IRPasses/*.dot.m4
+do 
+    filename=$(basename -- "$file")
+    filename="${filename%.*.*}"
+    echo "$filename"
+
+    m4 "$file" | dot -Tpng -o "./IRPassImages/$filename.png"
+done
