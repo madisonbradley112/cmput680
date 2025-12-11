@@ -8,7 +8,9 @@ subgraph cluster_1 {
     high_impact [style=filled,color=green];
     plugin_dependent [style=filled,color=pink];
     no_impact -> minimal_impact -> medium_impact -> high_impact -> plugin_dependent;
-    label = "Color Legend: Impact on Code Layout"
+    label = "Legend: Impact on Code Layout"
+    plugin_dependent -> legend_spacer_1
+    legend_spacer_1 [label="", width=3.5, height=0, shape=box, style=invis];
  }
 ')
 
@@ -20,7 +22,10 @@ subgraph cluster_2 {
     plugin_callbacks [shape=parallelogram];
     helper_function [shape=hexagon]
     standalone_pass -> sub_pipeline -> helper_function -> plugin_callbacks;
-    label = "Shape Legend: Type of Pass"
+    label = "Legend: Type of Pass"
+    legend_spacer_1 -> standalone_pass
+    plugin_callbacks -> legend_spacer_2
+    legend_spacer_2 [label="", width=3.5, height=0, shape=box, style=invis];
  }
 ')
 

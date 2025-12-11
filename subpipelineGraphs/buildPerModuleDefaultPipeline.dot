@@ -1,0 +1,143 @@
+digraph G {
+
+  
+subgraph cluster_1 {
+    edge [style=invis];
+    node [shape=box]
+    no_impact [style=filled,color=lightgray];
+    minimal_impact [style=filled,color=orange];
+    medium_impact [style=filled,color=yellow];
+    high_impact [style=filled,color=green];
+    plugin_dependent [style=filled,color=pink];
+    no_impact -> minimal_impact -> medium_impact -> high_impact -> plugin_dependent;
+    label = "Legend: Code Layout Impact"
+ }
+
+  
+subgraph cluster_2 {
+    edge [style=invis];
+    standalone_pass;
+    sub_pipeline [shape=oval];
+    plugin_callbacks [shape=parallelogram];
+    helper_function [shape=hexagon]
+    standalone_pass -> sub_pipeline -> helper_function -> plugin_callbacks;
+    label = "Legend: Type of Pass"
+ }
+
+
+  subgraph cluster_3 {
+    node [style=filled]
+    style=filled;
+    color=white;
+
+  
+Entry [
+    label="Entry",
+    shape=box,
+    fillcolor=lightgray
+];
+
+  
+MemProfRemoveInfo [
+    label="MemProfRemoveInfo",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+
+  
+Annotation2MetadataPass [
+    label="Annotation2MetadataPass",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+
+  
+ForceFunctionAttrsPass [
+    label="ForceFunctionAttrsPass",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+
+  
+AddDiscriminatorsPass [
+    label="AddDiscriminatorsPass",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+
+  
+invokePipelineStartEPCallbacks [
+    label="invokePipelineStartEPCallbacks",
+    shape=parallelogram,
+    style=filled,
+    color=pink
+];
+
+  
+buildModuleSimplificationPipeline [
+    label="buildModuleSimplificationPipeline",
+    shape=oval,
+    style=filled,
+    color=green
+];
+
+  
+buildModuleOptimizationPipeline [
+    label="buildModuleOptimizationPipeline",
+    shape=oval,
+    style=filled,
+    color=green
+];
+
+  
+PseudoProbeUpdatePass [
+    label="PseudoProbeUpdatePass",
+    shape=box,
+    style=filled,
+    color=orange
+];
+
+  
+addAnnotationRemarksPass [
+    label="addAnnotationRemarksPass",
+    shape=hexagon,
+    style=filled,
+    color=lightgray
+];
+
+  
+addRequiredLTOPreLinkPasses [
+    label="addRequiredLTOPreLinkPasses",
+    shape=hexagon,
+    style=filled,
+    color=lightgray
+];
+
+  
+buildO0DefaultPipeline [
+    label="buildO0DefaultPipeline",
+    shape=oval,
+    style=filled,
+    color=green
+];
+
+  
+Exit [
+    label="Exit",
+    shape=box,
+    fillcolor=lightgray
+];
+
+
+  Entry -> MemProfRemoveInfo -> Annotation2MetadataPass
+  Entry -> Annotation2MetadataPass -> ForceFunctionAttrsPass -> AddDiscriminatorsPass -> invokePipelineStartEPCallbacks
+  ForceFunctionAttrsPass -> invokePipelineStartEPCallbacks -> buildModuleSimplificationPipeline -> buildModuleOptimizationPipeline -> PseudoProbeUpdatePass -> addAnnotationRemarksPass -> addRequiredLTOPreLinkPasses -> Exit
+  buildModuleOptimizationPipeline -> addAnnotationRemarksPass -> Exit
+  Entry -> buildO0DefaultPipeline -> Exit
+   label = "addPostPGOLoopRotation"; 
+  }
+}
