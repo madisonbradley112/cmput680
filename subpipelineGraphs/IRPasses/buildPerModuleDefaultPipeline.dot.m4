@@ -30,6 +30,6 @@ digraph G {
   ForceFunctionAttrsPass -> invokePipelineStartEPCallbacks -> buildModuleSimplificationPipeline -> buildModuleOptimizationPipeline -> PseudoProbeUpdatePass -> addAnnotationRemarksPass -> addRequiredLTOPreLinkPasses -> Exit
   buildModuleOptimizationPipeline -> addAnnotationRemarksPass -> Exit
   Entry -> buildO0DefaultPipeline -> Exit
-   label = "addPostPGOLoopRotation"; 
+   label = "buildPerModuleDefaultPipeline"; 
   }
 }
