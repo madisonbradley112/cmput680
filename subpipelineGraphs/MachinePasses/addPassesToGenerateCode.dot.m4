@@ -20,6 +20,6 @@ digraph G {
 
   Entry -> invokeGlobalTargetPassConfigCallbacks -> addISelPasses -> addMachinePasses -> Exit
   
-   label = "addOptimizedRegAlloc"; 
+   label = "addPassesToGenerateCode"; 
   }
 }

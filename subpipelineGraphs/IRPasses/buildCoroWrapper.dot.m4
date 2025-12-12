@@ -19,6 +19,6 @@ digraph G {
   EXIT
 
   Entry -> CoroEarlyPass -> CoroSplitPass -> CoroCleanupPass -> GlobalDCEPass -> Exit
-   label = "addPostPGOLoopRotation"; 
+   label = "buildCoroWrapper"; 
   }
 }

@@ -19,6 +19,6 @@ digraph G {
 
   Entry -> addPassesToGenerateCode -> AsmPrinter -> FreeMachineFunctionPass -> Exit
   
-   label = "addOptimizedRegAlloc"; 
+   label = "addPassesToEmitMC"; 
   }
 }

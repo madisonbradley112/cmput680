@@ -2187,13 +2187,32 @@ TypePromotionLegacyPass [
 ')
 
 define(`GLOBAL_MERGE_PASS', `
-GlobalMerge [
-    label="GlobalMerge",
+GlobalMergePass [
+    label="GlobalMergePass",
     shape=box,
     style=filled,
     color=yellow
 ];
 ')
+
+define(`RISCV_O0_PRE_LEGALIZER_COMBINER_PASS', `
+RISCVO0PreLegalizerCombiner [
+    label="RISCVO0PreLegalizerCombiner",
+    shape=box,
+    style=filled,
+    color=orange
+];
+')
+
+define(`RISCV_PRE_LEGALIZER_COMBINER_PASS', `
+RISCVPreLegalizerCombiner [
+    label="RISCVPreLegalizerCombiner",
+    shape=box,
+    style=filled,
+    color=yellow
+];
+')
+
 
 define(`GLOBAL_MERGE_FUNC_PASS', `
 GlobalMergeFuncPass [
@@ -2331,8 +2350,8 @@ ImplicitNullChecks [
 ')
 
 define(`RISCV_LOAD_STORE_OPT_PASS', `
-RISCVLoadStoreOpt [
-    label="RISCVLoadStoreOpt",
+RISCVLoadStoreOptPass [
+    label="RISCVLoadStoreOptPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2358,8 +2377,8 @@ RISCVFoldMemOffsetPass [
 ')
 
 define(`RISCV_MOVE_MERGE_PASS', `
-RISCVMoveMerge [
-    label="RISCVMoveMerge",
+RISCVMoveMergePass [
+    label="RISCVMoveMergePass",
     shape=box,
     style=filled,
     color=yellow
@@ -2367,8 +2386,8 @@ RISCVMoveMerge [
 ')
 
 define(`RISCV_PUSH_POP_OPTIMIZATION_PASS', `
-RISCVPushPopOptimization [
-    label="RISCVPushPopOptimization",
+RISCVPushPopOptimizationPass [
+    label="RISCVPushPopOptimizationPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2376,8 +2395,8 @@ RISCVPushPopOptimization [
 ')
 
 define(`RISCV_EXPAND_PSEUDO_PASS', `
-RISCVExpandPseudo [
-    label="RISCVExpandPseudo",
+RISCVExpandPseudoPass [
+    label="RISCVExpandPseudoPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2385,26 +2404,46 @@ RISCVExpandPseudo [
 ')
 
 define(`RISCV_EXPAND_ATOMIC_PSEUDO_PASS', `
-RISCVExpandAtomicPseudo [
-    label="RISCVExpandAtomicPseudo",
+RISCVExpandAtomicPseudoPass [
+    label="RISCVExpandAtomicPseudoPass",
     shape=box,
     style=filled,
     color=yellow
 ];
 ')
+
+define(`UNPACK_MACHINE_BUNDLES', `
+UnpackMachineBundles [
+    label="UnpackMachineBundles",
+    shape=box,
+    style=filled,
+    color=orange
+];
+')
+
 
 define(`RISCV_MAKE_COMPRESSIBLE_OPT_PASS', `
-RISCVMakeCompressibleOpt [
-    label="RISCVMakeCompressibleOpt",
+RISCVMakeCompressibleOptPass [
+    label="RISCVMakeCompressibleOptPass",
     shape=box,
     style=filled,
     color=yellow
 ];
 ')
 
+define(`RISCV_INDIRECT_BRANCH_TRACKING_PASS', `
+RISCVIndirectBranchTrackingPass [
+    label="RISCVIndirectBranchTrackingPass",
+    shape=box,
+    style=filled,
+    color=orange
+];
+')
+
+
 define(`RISCVVMV0_ELIMINATION_PASS', `
-RISCVVMV0Elimination [
-    label="RISCVVMV0Elimination",
+RISCVVMV0EliminationPass [
+    label="RISCVVMV0EliminationPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2421,8 +2460,8 @@ MachineCombiner [
 ')
 
 define(`MACHINE_COPY_PROPAGATION_PASS', `
-MachineCopyPropagation [
-    label="MachineCopyPropagation",
+MachineCopyPropagationPass [
+    label="MachineCopyPropagationPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2439,8 +2478,8 @@ RISCVRedundantCopyEliminationPass [
 ')
 
 define(`RISCV_PROMOTE_CONSTANT_PASS', `
-RISCVPromoteConstant [
-    label="RISCVPromoteConstant",
+RISCVPromoteConstantPass [
+    label="RISCVPromoteConstantPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2448,8 +2487,8 @@ RISCVPromoteConstant [
 ')
 
 define(`RISCV_PRE_RA_EXPAND_PSEUDO_PASS', `
-RISCVPreRAExpandPseudo [
-    label="RISCVPreRAExpandPseudo",
+RISCVPreRAExpandPseudoPass [
+    label="RISCVPreRAExpandPseudoPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2457,8 +2496,8 @@ RISCVPreRAExpandPseudo [
 ')
 
 define(`RISCV_POST_RA_EXPAND_PSEUDO_PASS', `
-RISCVPostRAExpandPseudo [
-    label="RISCVPostRAExpandPseudo",
+RISCVPostRAExpandPseudoPass [
+    label="RISCVPostRAExpandPseudoPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2475,17 +2514,27 @@ RISCVInsertVSETVLIPass [
 ')
 
 define(`RISCVVL_OPTIMIZER_PASS', `
-RISCVVLOptimizer [
-    label="RISCVVLOptimizer",
+RISCVVLOptimizerPass [
+    label="RISCVVLOptimizerPass",
     shape=box,
     style=filled,
     color=yellow
 ];
 ')
 
+define(`RISCV_POST_LEGALIZER_COMBINER', `
+RISCVPostLegalizerCombiner [
+    label="RISCVPostLegalizerCombiner",
+    shape=box,
+    style=filled,
+    color=yellow
+];
+')
+
+
 define(`RISCV_PRE_ALLOC_ZILSD_OPT_PASS', `
-RISCVPreAllocZilsdOpt [
-    label="RISCVPreAllocZilsdOpt",
+RISCVPreAllocZilsdOptPass [
+    label="RISCVPreAllocZilsdOptPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2493,17 +2542,27 @@ RISCVPreAllocZilsdOpt [
 ')
 
 define(`RISCV_INSERT_READ_WRITE_CSR_PASS', `
-RISCVInsertReadWriteCSR [
-    label="RISCVInsertReadWriteCSR",
+RISCVInsertReadWriteCSRPass [
+    label="RISCVInsertReadWriteCSRPass",
     shape=box,
     style=filled,
     color=yellow
 ];
 ')
 
+define(`RISCV_MERGE_BASE_OFFSET_OPT_PASS', `
+RISCVMergeBaseOffsetOptPass [
+    label="RISCVMergeBaseOffsetOptPass",
+    shape=box,
+    style=filled,
+    color=green
+];
+')
+
+
 define(`RISCV_INSERT_WRITE_VXRM_PASS', `
-RISCVInsertWriteVXRM [
-    label="RISCVInsertWriteVXRM",
+RISCVInsertWriteVXRMPass [
+    label="RISCVInsertWriteVXRMPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2511,8 +2570,8 @@ RISCVInsertWriteVXRM [
 ')
 
 define(`RISCV_LANDING_PAD_SETUP_PASS', `
-RISCVLandingPadSetup [
-    label="RISCVLandingPadSetup",
+RISCVLandingPadSetupPass [
+    label="RISCVLandingPadSetupPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2520,8 +2579,8 @@ RISCVLandingPadSetup [
 ')
 
 define(`KCFI_PASS', `
-KCFI [
-    label="KCFI",
+KCFIPass [
+    label="KCFIPass",
     shape=box,
     style=filled,
     color=yellow
@@ -2870,6 +2929,108 @@ addPostRegAlloc [
     color=green
 ];
 ')
+
+define(`RVV_REG_ALLOC_PASS', `
+RVVRegAllocPass [
+    label="RVVRegAllocPass",
+    shape=box,
+    style=filled,
+    color=green
+];
+')
+
+define(`RISCV_INSERT_VSETVLI_PASS', `
+RISCVInsertVSETVLIPass [
+    label="RISCVInsertVSETVLIPass",
+    shape=box,
+    style=filled,
+    color=yellow
+];
+')
+
+define(`RISCV_DEAD_REGISTER_DEFINITIONS_PASS', `
+RISCVDeadRegisterDefinitionsPass [
+    label="RISCVDeadRegisterDefinitionsPass",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+')
+
+define(`REG_ALLOC_PASS', `
+RegAllocPass [
+    label="RegAllocPass",
+    shape=box,
+    style=filled,
+    color=green
+];
+')
+
+define(`ADD_POST_FAST_REG_ALLOC_REWRITE', `
+addPostFastRegAllocRewrite [
+    label="addPostFastRegAllocRewrite",
+    shape=hexagon,
+    style=filled,
+    color=yellow
+];
+')
+
+define(`VIRT_REG_REWRITER', `
+VirtRegRewriter [
+    label="VirtRegRewriter",
+    shape=box,
+    style=filled,
+    color=green
+];
+')
+
+define(`VIRT_REG_REWRITER_1', `
+VirtRegRewriter_1 [
+    label="VirtRegRewriter_1",
+    shape=box,
+    style=filled,
+    color=green
+];
+')
+
+define(`VIRT_REG_REWRITER_2', `
+VirtRegRewriter_2 [
+    label="VirtRegRewriter_2",
+    shape=box,
+    style=filled,
+    color=green
+];
+')
+
+define(`REG_BANK_SELECT', `
+RegBankSelect [
+    label="RegBankSelect",
+    shape=box,
+    style=filled,
+    color=green
+];
+')
+
+
+define(`ADD_PRE_REWRITE', `
+addPreRewrite [
+    label="addPreRewrite",
+    shape=hexagon,
+    style=filled,
+    color=yellow
+];
+')
+
+define(`REG_ALLOC_SCORING_PASS', `
+RegAllocScoringPass [
+    label="RegAllocScoringPass",
+    shape=box,
+    style=filled,
+    color=yellow
+];
+')
+
+
 
 define(`FIXUP_STATEPOINT_CALLER_SAVED_ID', `
 FixupStatepointCallerSavedID [

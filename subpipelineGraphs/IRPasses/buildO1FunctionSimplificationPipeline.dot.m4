@@ -53,6 +53,6 @@ digraph G {
   Entry -> CountVisitsPass -> SROAPass_1
   Entry ->SROAPass_1 -> EarlyCSEPass -> SimplifyCFGPass_1 -> InstCombinePass_1 -> LibCallsShrinkWrapPass -> invokePeepholeEPCallbacks_1 -> SimplifyCFGPass_2 -> ReassociatePass -> LoopInstSimplifyPass -> LoopSimplifyCFGPass -> LICMPass_1 -> LoopRotatePass -> LICMPass_2 -> SimpleLoopUnswitchPass -> LoopFlattenPass  -> LoopIdiomRecognizePass -> IndVarSimplifyPass -> invokeLateLoopOptimizationsEPCallbacks -> LoopDeletionPass -> LoopFullUnrollPass -> invokeLoopOptimizerEndEPCallbacks
   LoopDeletionPass -> invokeLoopOptimizerEndEPCallbacks -> SimplifyCFGPass_3 -> InstCombinePass_2 -> SROAPass_2 -> MemCpyOptPass -> SCCPPass -> BDCEPass -> InstCombinePass_3 -> invokePeepholeEPCallbacks_2 -> CoroElidePass -> invokeScalarOptimizerLateEPCallbacks -> ADCEPass -> SimplifyCFGPass_4 -> InstCombinePass_4 -> invokePeepholeEPCallbacks_3 -> Exit
-   label = "addPostPGOLoopRotation"; 
+   label = "buildO1FunctionSimplificationPipeline"; 
   }
 }

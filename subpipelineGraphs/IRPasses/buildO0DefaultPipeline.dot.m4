@@ -82,6 +82,6 @@ digraph G {
   invokeOptimizerEarlyEPCallbacks -> buildCoroWrapper
   invokeVectorizerStartEPCallbacks -> buildCoroWrapper
 
-   label = "addPostPGOLoopRotation"; 
+   label = "buildO0DefaultPipeline"; 
   }
 }
