@@ -1368,6 +1368,33 @@ RequireAnalysisPass [
 ];
 ')
 
+define(`REQUIRE_ANALYSIS_PASS_1', `
+RequireAnalysisPass_1 [
+    label="RequireAnalysisPass_1",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+')
+
+define(`REQUIRE_ANALYSIS_PASS_2', `
+RequireAnalysisPass_2 [
+    label="RequireAnalysisPass_2",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+')
+
+define(`REQUIRE_ANALYSIS_PASS_3', `
+RequireAnalysisPass_3 [
+    label="RequireAnalysisPass_3",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+')
+
 define(`SAMPLE_PROFILE_LOADER_PASS', `
 SampleProfileLoaderPass [
     label="SampleProfileLoaderPass",
@@ -1578,6 +1605,87 @@ invokePipelineStartEPCallbacks [
     shape=parallelogram,
     style=filled,
     color=pink
+];
+')
+
+define(`INVALIDATE_ANALYSIS_PASS', `
+InvalidateAnalysisPass [
+    label="InvalidateAnalysisPass",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+')
+
+define(`INVALIDATE_ANALYSIS_PASS_1', `
+InvalidateAnalysisPass_1 [
+    label="InvalidateAnalysisPass_1",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+')
+
+define(`INVALIDATE_ANALYSIS_PASS_2', `
+InvalidateAnalysisPass_2 [
+    label="InvalidateAnalysisPass_2",
+    shape=box,
+    style=filled,
+    color=lightgray
+];
+')
+
+define(`ATTRIBUTOR_CGSCC_PASS', `
+AttributorCGSCCPass [
+    label="AttributorCGSCCPass",
+    shape=box,
+    style=filled,
+    color=yellow
+];
+')
+
+define(`POST_ORDER_FUNCTION_ATTRS_PASS', `
+PostOrderFunctionAttrsPass [
+    label="PostOrderFunctionAttrsPass",
+    shape=box,
+    style=filled,
+    color=orange
+];
+')
+
+define(`POST_ORDER_FUNCTION_ATTRS_PASS_1', `
+PostOrderFunctionAttrsPass_1 [
+    label="PostOrderFunctionAttrsPass_1",
+    shape=box,
+    style=filled,
+    color=orange
+];
+')
+
+define(`POST_ORDER_FUNCTION_ATTRS_PASS_2', `
+PostOrderFunctionAttrsPass_2 [
+    label="PostOrderFunctionAttrsPass_2",
+    shape=box,
+    style=filled,
+    color=orange
+];
+')
+
+define(`ARGUMENT_PROMOTION_PASS', `
+ArgumentPromotionPass [
+    label="ArgumentPromotionPass",
+    shape=box,
+    style=filled,
+    color=yellow
+];
+')
+
+define(`OPENMP_OPT_CGSCC_PASS', `
+OpenMPOptCGSCCPass [
+    label="OpenMPOptCGSCCPass",
+    shape=box,
+    style=filled,
+    color=yellow
 ];
 ')
 
