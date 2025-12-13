@@ -10,5 +10,3 @@ We will investigate the LLVM 20 source for each code-layout pass, recording its 
 ## Significance: 
 
 Significance: We aim to produce a publicly available comprehensive overview of LLVM code transformation passes and their theoretical backgrounds to empower further research on pass development and ordering. This will contribute to a global understanding of the pipeline, providing avenues for further improvements in code layout pass design. While previous works have investigated the performance impact on pass orderings, none (to our knowledge) systematically document cumulative layout transformations in the LLVM opt pipeline; our research aims to fill that gap. 
-
-## Wiki Index: 
